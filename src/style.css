@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-a,img,button{
+a,img,button,label{
     display: inline-block;
 }
 a{
@@ -160,4 +160,30 @@ p{
 }
 .cta-text{
     margin-bottom: 40px;
+}
+
+/* contacts */
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input{
+    width: 350px;
+    height: 30px;
+}
+.contact-form label{
+    margin-bottom: 6px;
+}
+
+.submit-button{
+    width: 350px;
+    height: 40px;
 }

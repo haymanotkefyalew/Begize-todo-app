@@ -212,3 +212,35 @@ p{
         flex-direction: column;
         gap: 15px;
 }
+/* signup modal */
+
+.signup-modal-none{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--white);
+    width: 700px;
+    gap: 40px;
+}
+.signup-modal-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.signup-modal-form input[type="text"] ,.signup-modal-form input[type="password"]{
+    width: 350px;
+    height: 30px;
+}
+.signup-modal-form label {
+    margin-bottom: 6px;
+}
+
+.modal-submit {
+    width: 320px;
+    height: 40px;
+}

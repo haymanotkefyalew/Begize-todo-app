@@ -8,6 +8,32 @@
   </head>
   <body>
     <div class="page-container">
+      <div class="signup-modal-none">
+        <form action="/" class="signup-modal-form">
+          <div class="modal-name">
+            <label for="modal-name">Full Name:</label><br />
+            <input type="text" id="modal-name" />
+          </div>
+          <div class="modal-username">
+            <label for="modal-username">Username:</label><br />
+            <input type="text" id="modal-username" />
+          </div>
+          <div class="modal-password">
+            <label for="modal-password">Password:</label><br />
+            <input type="password" id="modal-password" />
+          </div>
+          <div class="modal-confirm">
+            <label for="modal-confirm">Confirm Password:</label><br />
+            <input type="password" id="modal-confirm" />
+          </div>
+          <div class="modal-agree">
+            <input type="checkbox" name="agree" value="yes" id="agree" />
+            <label for="agree">Accept terms and conditions.</label>
+          </div>
+          <button class="modal-submit">Sign up</button>
+        </form>
+        <p class="have-acc">Already have an account? <a href="#">Login</a></p>
+      </div>
       <header class="main-header">
         <nav class="main-nav">
           <div class="nav-logo">

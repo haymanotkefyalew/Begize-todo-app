@@ -27,6 +27,26 @@ ul li{
     --gray-dark:#212529;
     --gray-base:#343a40;
     --gray-light:#6c757d;
+}
 
+/* Containers and types styles*/
+.page-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
 
 }
+h1{
+    font-size: 68px;
+}
+h2{
+    font-size: 48px;
+}
+h3{
+    font-size: 32px;
+}
+p{
+    font-size: 20px;
+}
+
+/* header section */

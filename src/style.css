@@ -1,0 +1,17 @@
+:root{
+    --primary-base:#023e8a;
+    --primary-shade:#03045e;
+    --primary-tint:#0096c7;
+
+    --secondary-base:#e40b0b;
+    --secondary-shade:#6a040f;
+    --secondary-tint:#dc2f02;
+
+    --black:#000;
+    --white:#fff;
+    --gray-dark:#212529;
+    --gray-base:#343a40;
+    --gray-light:#6c757d;
+
+    
+}

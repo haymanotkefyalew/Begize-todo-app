@@ -102,3 +102,40 @@ p{
 .hero-text{
     width: 98%;
 }
+
+/* features section */
+.features-section{
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        text-align: center;
+        gap: 30px;
+        margin: 130px auto;
+}
+.features-text-cont{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+        gap: 10px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-auto-rows: 250px;
+    row-gap: 30px;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.card{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}

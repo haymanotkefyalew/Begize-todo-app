@@ -214,10 +214,12 @@ p{
 }
 /* signup modal */
 
-.signup-modal-none{
-    display: flex;
+.signup-modal-none,.login-modal-none{
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: absolute;
     top: 55%;
     left: 50%;
@@ -225,22 +227,27 @@ p{
     background-color: var(--white);
     width: 700px;
     gap: 40px;
+    height: 500px;
+    margin-top: 20px;
 }
-.signup-modal-form{
+.signup-modal-form,.login-modal-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-.signup-modal-form input[type="text"] ,.signup-modal-form input[type="password"]{
+.signup-modal-form input[type="text"] ,.signup-modal-form input[type="password"],.login-modal-form input{
     width: 350px;
     height: 30px;
 }
-.signup-modal-form label {
+.signup-modal-form label,.login-modal-form label {
     margin-bottom: 6px;
 }
 
-.modal-submit {
-    width: 320px;
+.modal-submit , .lmodal-submit{
+    width: 350px;
     height: 40px;
+}
+.flex{
+    display: flex;
 }

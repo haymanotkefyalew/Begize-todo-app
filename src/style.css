@@ -50,3 +50,25 @@ p{
 }
 
 /* header section */
+.main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+}
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-links{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.main-components{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}

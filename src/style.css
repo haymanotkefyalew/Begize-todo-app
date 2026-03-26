@@ -139,3 +139,25 @@ p{
     gap: 10px;
     align-items: center;
 }
+/* cta section */
+.cta-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    text-align: center;
+    min-height: 100vh;
+    margin: 50px auto;
+}
+.cta-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    width: 90%;
+    gap: 10px;
+}
+.cta-text{
+    margin-bottom: 40px;
+}

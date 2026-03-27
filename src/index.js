@@ -8,6 +8,20 @@ const lModalSubmit=document.querySelector(".lmodal-submit");
 const signUpBtnC=document.querySelectorAll(".cta-component");
 const signUpModal=document.querySelector(".signup-modal-none")
 
+// inputs
+// sign up info
+
+const sFullName=document.querySelector("#modal-name")
+const sUsername=document.querySelector("#modal-username")
+const sPass=document.querySelector("#modal-password")
+const sPassC=document.querySelector("#modal-confirm")
+const sAgree=document.querySelector("#agree")
+
+//login info
+const lUsername=document.querySelector("#lmodal-username")
+const lPass=document.querySelector("#lmodal-password")
+
+
 let logInButtons=[...logInBtnN,...logInBtnH]
 let signUpButtons=[...signUpBtnN,...signUpBtnH,...signUpBtnC]
 

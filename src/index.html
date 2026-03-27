@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Begize to-do-app</title>
+    <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="page-container">
       <div class="signup-modal-none">
+        <h3>Sign Up</h3>
         <form action="/" class="signup-modal-form">
           <div class="modal-name">
             <label for="modal-name">Full Name:</label><br />
@@ -20,11 +22,11 @@
           </div>
           <div class="modal-password">
             <label for="modal-password">Password:</label><br />
-            <input type="password" id="modal-password" />
+            <input type="password" id="modal-password" autocomplete />
           </div>
           <div class="modal-confirm">
             <label for="modal-confirm">Confirm Password:</label><br />
-            <input type="password" id="modal-confirm" />
+            <input type="password" id="modal-confirm" autocomplete />
           </div>
           <div class="modal-agree">
             <input type="checkbox" name="agree" value="yes" id="agree" />
@@ -32,9 +34,12 @@
           </div>
           <button class="modal-submit">Sign up</button>
         </form>
-        <p class="have-acc">Already have an account? <a href="#">Login</a></p>
+        <p class="have-acc">
+          Already have an account? <a href="#" class="nbtn1">Login</a>
+        </p>
       </div>
       <div class="login-modal-none">
+        <h3>Log In</h3>
         <form action="/" class="login-modal-form">
           <div class="lmodal-username">
             <label for="lmodal-username">Username:</label><br />
@@ -42,12 +47,12 @@
           </div>
           <div class="lmodal-password">
             <label for="lmodal-password">Password:</label><br />
-            <input type="password" id="lmodal-password" />
+            <input type="password" id="lmodal-password" autocomplete />
           </div>
           <button class="lmodal-submit">Login</button>
         </form>
         <p class="nothave-acc">
-          Don't have an account? <a href="#">Create account</a>
+          Don't have an account? <a href="#" class="nbtn2">Create account</a>
         </p>
       </div>
       <header class="main-header">
@@ -61,7 +66,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
           <ul class="main-components">
-            <li><a href="main.html" class="nbtn nbtn1">Login</a></li>
+            <li><a href="#" class="nbtn nbtn1">Login</a></li>
             <li><a href="#" class="nbtn nbtn2">Sign up</a></li>
           </ul>
         </nav>

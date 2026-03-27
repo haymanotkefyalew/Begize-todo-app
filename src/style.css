@@ -242,6 +242,11 @@ p{
 .modal-submit , .lmodal-submit{
     width: 350px;
 }
+
+form span{
+    color: red;
+    margin-left: 3px;
+}
 .flex{
     display: flex;
     position: fixed;
@@ -298,4 +303,8 @@ p{
 }
 .no-scroll{
     overflow: hidden;
+}
+.u-invalid,.p-invalid,.fs-invalid,.us-invalid,.ps-invalid,.cs-invalid{
+    color: red;
+    font-size: 12px;
 }

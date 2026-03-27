@@ -16,12 +16,19 @@ const sUsername=document.querySelector("#modal-username")
 const sPass=document.querySelector("#modal-password")
 const sPassC=document.querySelector("#modal-confirm")
 const sAgree=document.querySelector("#agree")
+//signup object
+function signupObject(fullName,username,password){
+    return ({fullName,username,password})
+}
 
 //login info
 const lUsername=document.querySelector("#lmodal-username")
 const lPass=document.querySelector("#lmodal-password")
 
-
+//login object
+function loginObject(username,password){
+    return ({username,password})
+}
 let logInButtons=[...logInBtnN,...logInBtnH]
 let signUpButtons=[...signUpBtnN,...signUpBtnH,...signUpBtnC]
 
@@ -44,15 +51,115 @@ signUpButtons.forEach((each)=>{
 )
 
 modalSubmit.addEventListener("click",(e)=>{
+    
+    const invalidU=document.querySelector(".us-invalid")
+    const invalidF=document.querySelector(".fs-invalid")
+    const invalidP=document.querySelector(".ps-invalid")
+    
+
+    if(!validateName(sFullName.value)){
+        
+        invalidF.textContent="Invalid name"
+        clearWindowS();
+         e.preventDefault();
+        return
+    }else invalidF.textContent="";
+    if(!validateUsername(sUsername.value)){
+        
+        invalidU.textContent="Invalid username"
+        clearWindowS();
+         e.preventDefault();
+        return
+    }else invalidU.textContent="";
+    if(!validatePassword(sPass.value)){
+         invalidP.textContent="Invalid password"
+       sPass.value="";
+       sPassC.value="";
+       
+         e.preventDefault();
+        return
+    }else{
+        invalidP.textContent=""
+    }
+    if(sPass.value!=sPassC.value){
+        const invalidPC=document.querySelector(".cs-invalid")
+        invalidPC.textContent="Password don't match!"
+        sPass.value="";
+       sPassC.value="";
+       e.preventDefault();
+       return
+    }
+    clearWindowS();
+    let userInfo=[sFullName.value.trim(),sUsername.value.trim(),sPass.textContent.trim()]
+    let userObject=signupObject(...userInfo);
+
+    signUpModal.classList.remove("flex")
     document.body.classList.remove("no-scroll")
     window.location.href="main.html"
-    signUpModal.classList.remove("flex")
+    
      e.preventDefault();
 })
 lModalSubmit.addEventListener("click",(e)=>{
+const invalidU=document.querySelector(".u-invalid")
+ const invalidP=document.querySelector(".p-invalid")
+    if(!validateUsername(lUsername.value)){
+        
+        invalidU.textContent="Invalid username"
+        clearWindowL()
+         e.preventDefault();
+        return
+    }else invalidU.textContent="";
+    if(!validatePassword(lPass.value)){
+       lPass.value="";
+        invalidP.textContent="Invalid password"
+         e.preventDefault();
+        return
+    }else{
+        invalidP.textContent=""
+    }
+    let userInfo=[lUsername.value.trim(),lPass.value.trim()]
+    let userObject=loginObject(...userInfo);
+    clearWindowL()
     document.body.classList.remove("no-scroll")
     logInModal.classList.remove("flex")
     window.location.href="main.html"
      e.preventDefault();
 })
+
+function validateName(name){
+    name.trim();
+    if(name.length<3){
+        return false
+    }
+    return true
+}
+function validatePassword(password){
+    password.trim();
+    if(password.length<8){
+        return false
+    }
+    return true
+}
+function validateUsername(username){
+    console.log(username)
+    username.trim();
+    if(username.length<5){
+        return false
+    }
+    if(username.includes(" ")){
+        return false
+    }
+    return true
+}
+
+function clearWindowS(){
+    sFullName.value="";
+    sPass.value=""
+    sPassC.value=""
+    sUsername.value=""
+}
+function clearWindowL(){
+    lPass.value=""
+    lUsername.value=""
+}
 

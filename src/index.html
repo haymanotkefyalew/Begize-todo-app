@@ -13,20 +13,25 @@
         <h3>Sign Up</h3>
         <form action="/" class="signup-modal-form">
           <div class="modal-name">
-            <label for="modal-name">Full Name:</label><br />
+            <label for="modal-name">Full Name<span>* </span></label><br />
             <input type="text" id="modal-name" />
+            <p class="fs-invalid"></p>
           </div>
           <div class="modal-username">
-            <label for="modal-username">Username:</label><br />
+            <label for="modal-username">Username<span>* </span></label><br />
             <input type="text" id="modal-username" />
+            <p class="us-invalid"></p>
           </div>
           <div class="modal-password">
-            <label for="modal-password">Password:</label><br />
+            <label for="modal-password">Password<span>* </span></label><br />
             <input type="password" id="modal-password" autocomplete />
+            <p class="ps-invalid"></p>
           </div>
           <div class="modal-confirm">
-            <label for="modal-confirm">Confirm Password:</label><br />
+            <label for="modal-confirm">Confirm Password<span>* </span></label
+            ><br />
             <input type="password" id="modal-confirm" autocomplete />
+            <p class="cs-invalid"></p>
           </div>
           <div class="modal-agree">
             <input type="checkbox" name="agree" value="yes" id="agree" />
@@ -42,12 +47,14 @@
         <h3>Log In</h3>
         <form action="/" class="login-modal-form">
           <div class="lmodal-username">
-            <label for="lmodal-username">Username:</label><br />
+            <label for="lmodal-username">Username<span>* </span></label><br />
             <input type="text" id="lmodal-username" />
+            <p class="u-invalid"></p>
           </div>
           <div class="lmodal-password">
-            <label for="lmodal-password">Password:</label><br />
+            <label for="lmodal-password">Password<span>* </span></label><br />
             <input type="password" id="lmodal-password" autocomplete />
+            <p class="p-invalid"></p>
           </div>
           <button class="lmodal-submit">Login</button>
         </form>

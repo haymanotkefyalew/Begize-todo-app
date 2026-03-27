@@ -219,15 +219,8 @@ p{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     background-color: var(--white);
-    width: 700px;
     gap: 40px;
-    height: 500px;
-    margin-top: 20px;
 }
 .signup-modal-form,.login-modal-form{
     display: flex;
@@ -238,6 +231,9 @@ p{
 .signup-modal-form input[type="text"] ,.signup-modal-form input[type="password"],.login-modal-form input{
     width: 350px;
     height: 30px;
+    border-width: 0;
+    border-bottom: solid 1px var(--black);
+    outline: none;
 }
 .signup-modal-form label,.login-modal-form label {
     margin-bottom: 6px;
@@ -248,6 +244,14 @@ p{
 }
 .flex{
     display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 550px;
+    margin: 0 auto;
+    padding: 20px 10px;
 }
 
 /* components */
@@ -291,4 +295,7 @@ p{
         border: solid 2px var(--black);
         text-align: center;
         background-color: var(--white);
+}
+.no-scroll{
+    overflow: hidden;
 }

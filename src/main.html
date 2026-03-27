@@ -6,9 +6,52 @@
     <title>Begize |main page</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="main.css" />
-    <script src="index.js" defer></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
+    <div class="modals">
+      <div class="projects-modal-none">
+        <h3>Add new Project</h3>
+        <form action="/" class="projects-form">
+          <div class="project-name">
+            <label for="project-name">Project Name</label><br />
+            <input type="text" id="project-name" />
+          </div>
+          <div class="Project-description">
+            <label for="project-description">Description</label><br /><br />
+            <textarea
+              name="projectDescription"
+              id="project-description"
+              cols="45"
+              rows="8"
+            ></textarea>
+          </div>
+        </form>
+        <button class="save-project">Save</button>
+      </div>
+      <div class="tasks-modal-none">
+        <form action="/" class="tasks-form">
+          <div class="task-title">
+            <label for="task-title">Title</label><br />
+            <input type="text" id="task-title" />
+          </div>
+          <div class="task-description">
+            <label for="task-description">Description</label><br />
+            <textarea
+              name="taskDescription"
+              id="task-description"
+              cols="45"
+              rows="8"
+            ></textarea>
+          </div>
+          <div class="task-date">
+            <label for="task-date">Due Date</label><br />
+            <input type="date" id="task-date" />
+          </div>
+        </form>
+        <button class="save-task">Save</button>
+      </div>
+    </div>
     <div class="main-container">
       <header class="m-header">
         <div class="search">
@@ -44,6 +87,7 @@
               <h4>personal</h4>
               <h4>health</h4>
               <h4>shopping</h4>
+              <button class="addNewCategory">add new category +</button>
             </div>
           </div>
         </div>

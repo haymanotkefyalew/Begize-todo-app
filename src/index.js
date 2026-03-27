@@ -9,7 +9,6 @@ const signUpBtnC=document.querySelectorAll(".cta-component");
 const signUpModal=document.querySelector(".signup-modal-none")
 
 //second page
-const userprofile=document.querySelector(".usernamec")
 
 // inputs
 // sign up info

@@ -19,10 +19,12 @@
     min-height: 520px;
     /* height: 100vh; */
     padding: 10px 10px;
+    overflow-y: scroll;
 }
 .sidebar-cont{
     display: flex;
     flex-direction: column;
+    
 }
 .center-content{
     grid-area: main;
@@ -74,4 +76,56 @@ footer{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+/* modals */
+.projects-modal-none ,.tasks-modal-none{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    gap: 40px;
+}
+.flex {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+.projects-form input,.tasks-form input {
+    width: 350px;
+    height: 30px;
+    border-width: 0;
+    border-bottom: solid 1px var(--black);
+    outline: none;
+}
+
+.projects-form label ,.tasks-form label{
+    margin-bottom: 6px;
+}
+.projects-modal-none form , .tasks-modal-none form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.save-project, .save-task{
+    width: 350px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+    background-color: var(--white);
+}
+/* manage projects */
+.addNewCategory{
+    width: fit-content;
+    padding: 3px 5px;
 }

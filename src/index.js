@@ -8,6 +8,9 @@ const lModalSubmit=document.querySelector(".lmodal-submit");
 const signUpBtnC=document.querySelectorAll(".cta-component");
 const signUpModal=document.querySelector(".signup-modal-none")
 
+//second page
+const userprofile=document.querySelector(".usernamec")
+
 // inputs
 // sign up info
 
@@ -49,7 +52,7 @@ signUpButtons.forEach((each)=>{
     e.preventDefault();
 })}
 )
-
+if(modalSubmit){
 modalSubmit.addEventListener("click",(e)=>{
     
     const invalidU=document.querySelector(".us-invalid")
@@ -95,10 +98,13 @@ modalSubmit.addEventListener("click",(e)=>{
 
     signUpModal.classList.remove("flex")
     document.body.classList.remove("no-scroll")
-    window.location.href="main.html"
-    
+   
+    window.location.href="main.html"  
      e.preventDefault();
 })
+}
+
+if(lModalSubmit){
 lModalSubmit.addEventListener("click",(e)=>{
 const invalidU=document.querySelector(".u-invalid")
  const invalidP=document.querySelector(".p-invalid")
@@ -125,7 +131,7 @@ const invalidU=document.querySelector(".u-invalid")
     window.location.href="main.html"
      e.preventDefault();
 })
-
+}
 function validateName(name){
     name.trim();
     if(name.length<3){
@@ -141,7 +147,6 @@ function validatePassword(password){
     return true
 }
 function validateUsername(username){
-    console.log(username)
     username.trim();
     if(username.length<5){
         return false

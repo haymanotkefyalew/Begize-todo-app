@@ -185,7 +185,6 @@ p{
 
 .submit-button{
     width: 350px;
-    height: 40px;
 }
 
 /* footer section */
@@ -250,4 +249,38 @@ p{
 }
 .flex{
     display: flex;
+}
+
+/* components */
+
+.nbtn{
+    padding :10px 20px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+}
+.hbtn{
+    padding: 10px 20px;
+        width: 120px;
+        font-size: 16px;
+        font-weight: 500px;
+        border: solid 2px var(--black);
+        text-align: center;
+}
+.cta-component{
+        padding: 15px 25px;
+        font-size: 16px;
+        font-weight: 500px;
+        border: solid 2px var(--black);
+        text-align: center;
+}
+.submit-button{
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+    background-color: var(--white);
 }

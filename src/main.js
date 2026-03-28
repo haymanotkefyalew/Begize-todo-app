@@ -2,6 +2,12 @@ let projects = [];
 let currentView = 'all'
 let selectedTaskId = null;
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupEventListeners();
+    render();
+});
+
 function setupEventListeners(){
     document.querySelector('.addNewCategory').addEventListener('click', () => openModal('projects'));
     document.querySelector('.cancel-pmodal').addEventListener('click', closeModals);

@@ -1,19 +1,18 @@
 //  categories
 const addNewCategory=document.querySelector(".addNewCategory")
 const saveProjects=document.querySelector(".save-project")
-const projectName=document.querySelector("#project-name")
-const projectDescription=document.querySelector("#project-description")
 const categories=document.querySelector(".categories")
-const newProjectM=document.querySelector(".projects-modal-none")
+const newProjectM=document.querySelector(".projects-modal")
 const cancelPModal=document.querySelector(".cancel-pmodal")
 
 
-
+// other
+const backDrop=document.querySelector("#overlay")
 
 // tasks
 const addNewTask=document.querySelector(".addNewTask")
 const saveTasks=document.querySelector(".save-task")
-const newTaskM=document.querySelector(".tasks-modal-none")
+const newTaskM=document.querySelector(".tasks-modal")
 const taskName=document.querySelector("#task-title")
 const taskDescription=document.querySelector("#task-description")
 const dueDate=document.querySelector("#task-date")
@@ -56,40 +55,50 @@ taskRepetition.addEventListener("change",(event)=>{
 
 })
 
+
+// projects
+
+let projects=[];
+
 cancelPModal.addEventListener("click",()=>{
-    newProjectM.classList.remove("flex")
+    backDrop.classList.add("hidden")
+    newProjectM.classList.add("hidden")
 })
 cancelTModal.addEventListener("click",()=>{
-    newTaskM.classList.remove("flex")
+    backDrop.classList.add("hidden")
+    newTaskM.classList.add("hidden")
 })
 addNewCategory.addEventListener("click",()=>{
-    newProjectM.classList.add("flex")
+    backDrop.classList.remove("hidden")
+    newProjectM.classList.remove("hidden")
 })
 
 saveProjects.addEventListener("click",()=>{
-    const newCategoryTitle=document.createElement("summary")
-    newCategoryTitle.classList.add("project-title")
-    newCategoryTitle.textContent=projectName.value
-    newCategoryTitle.setAttribute("title",projectDescription.value)
-
-    const newCategory=document.createElement("details")
-    newCategory.classList.add("project")
-    newCategory.append(newCategoryTitle)
-
-    categories.insertBefore(newCategory,addNewCategory)
-    newProjectM.classList.remove("flex")
+    createProject();
+    backDrop.classList.add("hidden")
+    newTaskM.classList.add("hidden")
+    
 })
 
 addNewTask.addEventListener("click",()=>{
-    newTaskM.classList.add("flex")
+    backDrop.classList.remove("hidden")
+    newTaskM.classList.remove("hidden")
 })
 
 saveTasks.addEventListener("click",()=>{
-    const taskInfo=document.createElement("h4")
-    taskInfo.textContent=taskName.value
-    taskInfo.classList.add("task")
-
-    tasks.insertBefore(taskInfo,addNewTask)
-    newTaskM.classList.remove("flex")
+    
 
 })
+
+function createProject(){
+    const projectName=document.querySelector("#project-name").value
+    const projectDescription=document.querySelector("#project-description").value
+    const newProject={id:Date.now(),projectName,projectDescription}
+    projects.push(newProject)
+}
+
+function closeModal(){
+    backDrop.classList.add("hidden")
+    newTaskM.classList.add("hidden")
+    newProjectM.classList.add("hidden")
+}

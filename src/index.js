@@ -23,7 +23,9 @@ const sPass=document.querySelector("#modal-password")
 const sPassC=document.querySelector("#modal-confirm")
 const sAgree=document.querySelector("#agree")
 //signup object
-
+function signupObject(fullName,username,password){
+    return ({fullName,username,password})
+}
 
 //login info
 const lUsername=document.querySelector("#lmodal-username")
@@ -93,14 +95,13 @@ modalSubmit.addEventListener("click",(e)=>{
        e.preventDefault();
        return
     }
-    clearWindowS();
     let userInfo=[sFullName.value.trim(),sUsername.value.trim(),sPass.value.trim()]
+    clearWindowS();
     saveUserInfo(...userInfo)
 
     signUpModal.classList.remove("flex")
     document.body.classList.remove("no-scroll")
-   
-    window.location.href="main.html"  
+    window.location.href="./main.html"  
      e.preventDefault();
 })
 }

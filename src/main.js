@@ -7,8 +7,17 @@ let day=""
 
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
+    getProjectsStored()
     render();
 });
+
+function getProjectsStored(){
+    const data = localStorage.getItem("project");
+    projects = data ? JSON.parse(data) : [];
+}
+function SaveProjects(){
+    localStorage.setItem("project", JSON.stringify(projects))
+}
 function renderDueType(type){
     const taskDate=document.querySelector(".task-date")
     if(type=="daily") {
@@ -79,6 +88,7 @@ function addProject(){
     nameInput.value = '';
     descInput.value = '';
     closeModals();
+    SaveProjects()
     render();
 }
 
@@ -103,6 +113,7 @@ function addTask() {
     };
     project.tasks.push(newTask);
     closeModals();
+    SaveProjects();
     render();
 }
 
@@ -110,6 +121,7 @@ function toggleTask(projId, taskId) {
     const project = projects.find(p => p.id === projId);
     const task = project.tasks.find(t => t.id === taskId);
     task.completed = !task.completed;
+    SaveProjects();
     render();
 }
 
@@ -117,6 +129,7 @@ function deleteTask(projId, taskId) {
     const project = projects.find(p => p.id === projId);
     project.tasks = project.tasks.filter(t => t.id !== taskId);
     selectedTaskId = null;
+    SaveProjects();
     render();
 }
 

@@ -7,7 +7,7 @@ body{
     display: grid;
     grid-template-columns: 260px 1fr 300px;
     grid-template-rows: 70px 1fr 40px;
-    grid-template-areas: "sidebar header header" "sidebar main details" "footer footer footer";
+    grid-template-areas: "header header header" "sidebar main details" "footer footer footer";
     height: 100vh;
 }
 .detail-panel{
@@ -22,18 +22,15 @@ body{
 }
 .sidebar{
     grid-area: sidebar;
-    display: grid;
-    grid-template-rows: 100px auto;
-    min-height: 520px;
-    /* height: 100vh; */
-    padding: 10px 10px;
-    overflow-y: scroll;
-}
-.sidebar-cont{
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    
+    gap: 20px;
+    overflow-y: auto;
+
 }
+ 
+
 .center-content{
     grid-area: main;
 }
@@ -43,24 +40,31 @@ body{
 .footer{
     grid-area: footer;
 }
-.categories-cont, .activities-cont{
-        height: 240px;
-            overflow-y: scroll;
-            position: relative;
-            scrollbar-width: thin;
-}
-.activities,.categories{
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-    gap: 8px;
-    margin-top: 45px;
 
+
+/* side bar- */
+.sidebar h3{
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-.sidebar-cont h3{
-    position: absolute;
-    top: 2px;
+
+.activities{
+    height: 180px;
+}
+
+.sidebar button {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* search */

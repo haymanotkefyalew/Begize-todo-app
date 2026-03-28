@@ -69,6 +69,11 @@
     </div>
     <div class="main-container">
       <header class="m-header">
+        <div class="m-logo">
+          <a href="index.html"
+            ><img src="https://placehold.co/100x60/000000/FFFFFF/png" alt=""
+          /></a>
+        </div>
         <div class="search">
           <label for="search">Icon</label>
           <input type="search" name="search" id="search" />
@@ -81,33 +86,20 @@
         </div>
       </header>
       <aside class="sidebar">
-        <div class="m-logo">
-          <a href="index.html"
-            ><img src="https://placehold.co/100x60/000000/FFFFFF/png" alt=""
-          /></a>
+        <div class="activities-cont">
+          <h3 class="activities-heading">Activities</h3>
+          <div class="activities">
+            <button>All Tasks</button>
+            <button>pending</button>
+            <button>completed</button>
+          </div>
         </div>
-        <div class="sidebar-cont">
-          <div class="activities-cont">
-            <h3 class="activities-heading">Activities</h3>
-            <div class="activities">
-              <h4>All Tasks</h4>
-              <h4>pending</h4>
-              <h4>completed</h4>
-            </div>
-          </div>
-          <div class="categories-cont">
+        <div class="categories-cont">
+          <div class="categories">
             <h3 class="categories-heading">Categories</h3>
-            <div class="categories">
-              <details>
-                <summary class="project-title">Class work</summary>
-                <div class="tasks">
-                  <h4 class="task">home Work</h4>
-                  <button class="addNewTask">add task +</button>
-                </div>
-              </details>
-              <button class="addNewCategory">add new category +</button>
-            </div>
+            <button class="addNewCategory">add new category +</button>
           </div>
+          <div class="categories-list"></div>
         </div>
       </aside>
       <section class="center-content"></section>

@@ -5,6 +5,7 @@ const projectName=document.querySelector("#project-name")
 const projectDescription=document.querySelector("#project-description")
 const categories=document.querySelector(".categories")
 const newProjectM=document.querySelector(".projects-modal-none")
+const cancelPModal=document.querySelector(".cancel-pmodal")
 
 
 
@@ -19,7 +20,9 @@ const dueDate=document.querySelector("#task-date")
 const dueDateC=document.querySelector(".task-date")
 const taskRepetition=document.querySelector(".task-repetition")
 const tasks=document.querySelector(".tasks")
+const cancelTModal=document.querySelector(".cancel-tmodal")
 
+console.log(taskRepetition.value)
 taskRepetition.addEventListener("change",(event)=>{
     const selectedValue=event.target.value
                 if(selectedValue=="daily"){
@@ -53,7 +56,12 @@ taskRepetition.addEventListener("change",(event)=>{
 
 })
 
-
+cancelPModal.addEventListener("click",()=>{
+    newProjectM.classList.remove("flex")
+})
+cancelTModal.addEventListener("click",()=>{
+    newTaskM.classList.remove("flex")
+})
 addNewCategory.addEventListener("click",()=>{
     newProjectM.classList.add("flex")
 })

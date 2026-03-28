@@ -1,4 +1,6 @@
-import { saveUserInfo,getUserInfo } from "./modules/user-info";
+import { saveUserInfo,getUserInfo } from "./modules/user-info.js";
+import { validateName,validatePassword,validateUsername } from "./modules/validate-input.js";
+import { clearWindowL,clearWindowS } from "./modules/utilities.js";
 
 const logInBtnN=document.querySelectorAll(".nbtn1");
 const logInBtnH=document.querySelectorAll(".hbtn1");
@@ -21,9 +23,7 @@ const sPass=document.querySelector("#modal-password")
 const sPassC=document.querySelector("#modal-confirm")
 const sAgree=document.querySelector("#agree")
 //signup object
-function signupObject(fullName,username,password){
-    return ({fullName,username,password})
-}
+
 
 //login info
 const lUsername=document.querySelector("#lmodal-username")
@@ -124,8 +124,23 @@ const invalidU=document.querySelector(".u-invalid")
     }else{
         invalidP.textContent=""
     }
+     let savedInfo=getUserInfo()
     let userInfo=[lUsername.value.trim(),lPass.value.trim()]
     let userObject=loginObject(...userInfo);
+
+    if(savedInfo.username!=userObject.username){
+         invalidU.textContent="Account not found!"
+        clearWindowL()
+         e.preventDefault();
+        return
+    }else{
+        if(savedInfo.password!=userObject.password){
+        lPass.value="";
+        invalidP.textContent="Wrong password"
+         e.preventDefault();
+        return
+        }
+    }
     clearWindowL()
     document.body.classList.remove("no-scroll")
     logInModal.classList.remove("flex")
@@ -133,39 +148,3 @@ const invalidU=document.querySelector(".u-invalid")
      e.preventDefault();
 })
 }
-function validateName(name){
-    name.trim();
-    if(name.length<3){
-        return false
-    }
-    return true
-}
-function validatePassword(password){
-    password.trim();
-    if(password.length<8){
-        return false
-    }
-    return true
-}
-function validateUsername(username){
-    username.trim();
-    if(username.length<5){
-        return false
-    }
-    if(username.includes(" ")){
-        return false
-    }
-    return true
-}
-
-function clearWindowS(){
-    sFullName.value="";
-    sPass.value=""
-    sPassC.value=""
-    sUsername.value=""
-}
-function clearWindowL(){
-    lPass.value=""
-    lUsername.value=""
-}
-

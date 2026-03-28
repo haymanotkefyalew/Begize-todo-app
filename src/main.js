@@ -1,13 +1,44 @@
 let projects = [];
 let currentView = 'all'
 let selectedTaskId = null;
+let repetition=""
+let day=""
 
 
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     render();
 });
-
+function renderDueType(type){
+    const taskDate=document.querySelector(".task-date")
+    if(type=="daily") {
+        taskDate.innerHTML="";
+    }
+    else if(type=="weekly"){
+        taskDate.innerHTML=`
+        <select id="weekday-select" class="weekday" name="weekday">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        `
+    }
+    else if(type=='monthly'){
+        taskDate.innerHTML=`
+        <label for="task-date">Due Date</label><br />
+            <input type="date" id="task-date" />
+        `
+    }else{
+        taskDate.innerHTML=`
+        <label for="task-date">Date</label><br />
+            <input type="date" id="task-date" />
+        `
+    }
+}
 function setupEventListeners(){
     document.querySelector('.addNewCategory').addEventListener('click', () => openModal('projects'));
     document.querySelector('.cancel-pmodal').addEventListener('click', closeModals);
@@ -15,11 +46,19 @@ function setupEventListeners(){
 
     document.querySelector('.cancel-tmodal').addEventListener('click', closeModals);
     document.querySelector('.save-task').addEventListener('click', addTask);
+    document.querySelector('.task-repetition').addEventListener("change",(event)=>{
+        repetition=event.target.value
+        renderDueType(repetition);
+    })
+
+    
 
     const activityBtns = document.querySelectorAll('.activities button');
     activityBtns[0].addEventListener('click', () => setView('all'));
     activityBtns[1].addEventListener('click', () => setView('pending'));
     activityBtns[2].addEventListener('click', () => setView('completed'));
+
+
 }
 
 
@@ -50,12 +89,14 @@ function addTask() {
 
     const projectId = parseInt(currentView.split('-')[1]);
     const project = projects.find(p => p.id === projectId);
-
+    if(repetition=="weekly"){
+        day=document.querySelector("#weekday-select").value
+    }
     const newTask = {
         id: Date.now(),
         title: title,
         desc: document.getElementById('task-description').value,
-        date: document.getElementById('task-date').value,
+        date: repetition=="weekly"?day:document.getElementById('task-date').value,
         recurrence: document.getElementById('task-repetition').value,
         priority: 'normal',
         completed: false
@@ -148,7 +189,7 @@ function renderDetails() {
     });
 
     if(!foundTask) return;
-
+    
     panel.innerHTML = `
         <h3>${foundTask.title}</h3>
         <p style="margin: 15px 0; color: #666">${foundTask.desc || 'No description'}</p>

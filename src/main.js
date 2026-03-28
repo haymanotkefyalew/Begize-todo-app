@@ -76,3 +76,42 @@ function renderSidebar() {
         </button>
     `).join('');
 }
+
+function renderMain() {
+    const header = document.getElementById('view-header');
+    const list = document.getElementById('task-items');
+    let tasksToShow = [];
+    let viewTitle = "";
+
+    if (currentView.startsWith('project-')) {
+        const id = parseInt(currentView.split('-')[1]);
+        const p = projects.find(proj => proj.id === id);
+        viewTitle = p ? p.name : "Unknown";
+        if(p) tasksToShow = p.tasks.map(t => ({...t, projId: p.id}));
+    } else {
+        viewTitle = currentView.toUpperCase();
+        projects.forEach(p => {
+            p.tasks.forEach(t => {
+                if (currentView === 'all') tasksToShow.push({...t, projId: p.id});
+                else if (currentView === 'pending' && !t.completed) tasksToShow.push({...t, projId: p.id});
+                else if (currentView === 'completed' && t.completed) tasksToShow.push({...t, projId: p.id});
+            });
+        });
+    }
+
+    header.innerHTML = `
+        <h2>${viewTitle}</h2> 
+        ${currentView.startsWith('project-') ? '<button onclick="openModal(\'tasks\')">+ New Task</button>' : ''}
+    `;
+    
+    list.innerHTML = tasksToShow.map(t => `
+        <div class="task-card ${t.completed ? 'completed' : ''}" onclick="selectTask(${t.id})">
+            <input type="checkbox" ${t.completed ? 'checked' : ''} 
+                   onclick="event.stopPropagation(); toggleTask(${t.projId}, ${t.id})">
+            <div style="flex:1">
+                <strong>${t.title}</strong><br>
+                <small>${t.recurrence !== 'onetime' ? '🔁 ' + t.recurrence : t.date}</small>
+            </div>
+        </div>
+    `).join('');
+}

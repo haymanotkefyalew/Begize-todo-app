@@ -15,3 +15,22 @@ function setupEventListeners(){
     activityBtns[1].addEventListener('click', () => setView('pending'));
     activityBtns[2].addEventListener('click', () => setView('completed'));
 }
+
+
+function addProject(){
+    const nameInput = document.getElementById('project-name');
+    const descInput = document.getElementById('project-description');
+    
+    if (!nameInput.value) return alert("Enter a project name");
+
+    const newProj = { 
+        id: Date.now(), 
+        name: nameInput.value, 
+        description: descInput.value, 
+        tasks: [] 
+    };
+
+    projects.push(newProj);
+    nameInput.value = '';
+    descInput.value = '';
+}

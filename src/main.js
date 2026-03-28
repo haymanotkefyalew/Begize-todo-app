@@ -66,3 +66,13 @@ function deleteTask(projId, taskId) {
     project.tasks = project.tasks.filter(t => t.id !== taskId);
     selectedTaskId = null;
 }
+
+function renderSidebar() {
+    const container = document.querySelector('.categories-list');
+    container.innerHTML = projects.map(p => `
+        <button class="${currentView === 'project-' + p.id ? 'active-nav' : ''}" 
+                onclick="setView('project-${p.id}')">
+            📂 ${p.name}
+        </button>
+    `).join('');
+}

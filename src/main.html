@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Begize |main page</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="stylesheet" href="main.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
+    <div id="overlay" class="hidden"></div>
     <div class="modals">
-      <div class="projects-modal-none">
+      <div class="projects-modal hidden">
         <button class="cancel-pmodal">X</button>
         <h3>Add new Project</h3>
         <form action="/" class="projects-form">
@@ -32,7 +33,7 @@
           <button class="save-project">Save</button>
         </div>
       </div>
-      <div class="tasks-modal-none">
+      <div class="tasks-modal hidden">
         <button class="cancel-tmodal">X</button>
         <h3>Add new Task</h3>
         <form action="/" class="tasks-form">
@@ -102,7 +103,10 @@
           <div class="categories-list"></div>
         </div>
       </aside>
-      <section class="center-content"></section>
+      <section class="center-content">
+        <div id="view-header"></div>
+        <div id="task-items"></div>
+      </section>
       <section class="detail-panel" id="detail-panel">
         <div class="placeholder">Select a task to see details</div>
       </section>

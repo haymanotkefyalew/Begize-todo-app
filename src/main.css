@@ -20,7 +20,17 @@ body{
     align-items: center;
     padding: 20px 30px;
 }
-.sidebar{
+
+
+
+.footer{
+    grid-area: footer;
+}
+
+
+/* side bar- */
+
+.sidebar {
     grid-area: sidebar;
     padding: 20px;
     display: flex;
@@ -29,20 +39,6 @@ body{
     overflow-y: auto;
 
 }
- 
-
-.center-content{
-    grid-area: main;
-}
-.right-sidebar{
-    grid-area: other;
-}
-.footer{
-    grid-area: footer;
-}
-
-
-/* side bar- */
 .sidebar h3{
     font-size: 24px;
     text-transform: uppercase;
@@ -67,6 +63,63 @@ body{
     cursor: pointer;
 }
 
+
+/* main content */
+
+.center-content{
+    grid-area: main;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* right side */
+
+.right-sidebar {
+    grid-area: other;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+
+/* Task Cards */
+.task-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.task-card.high {
+    border-left: 4px solid #ef4444;
+}
+
+.task-card.medium {
+    border-left: 4px solid #f59e0b;
+}
+
+.task-card.low {
+    border-left: 4px solid #10b981;
+}
+
+.task-card.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+
 /* search */
 .search{
     display: flex;
@@ -83,33 +136,41 @@ body{
     align-items: center;
     gap: 5px;
 }
-footer{
-    padding: 10px ;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
+
 
 /* modals */
-.projects-modal-none ,.tasks-modal-none{
-    display: none;
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.hidden{
+    display: none !important;
+}
+
+.projects-modal ,.tasks-modal{
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--white);
     gap: 40px;
-}
-.flex {
     display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 500px;
-    margin: 0 auto;
-    padding: 20px 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 500px;
+        margin: 0 auto;
+        padding: 20px 10px;
+        z-index: 11;
 }
+
 .projects-form input,.tasks-form input {
     width: 350px;
     height: 30px;
@@ -169,4 +230,13 @@ footer{
     padding: 5px 0 5px 2px;
     width: 100%;
 }
-
+/* footer */
+.footer {
+    grid-area: footer;
+    background: white;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}

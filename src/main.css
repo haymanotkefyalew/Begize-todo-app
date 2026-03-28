@@ -140,3 +140,21 @@ footer{
     margin-top: 5px;
     cursor: pointer;
 }
+
+.cancel-pmodal,.cancel-tmodal{
+    align-self: flex-end;
+    margin-right: 80px;
+    margin-bottom: -35px;
+    font-size: 30px;
+}
+.cancel-tmodal{
+    margin-bottom: -50px;
+}
+.task-repetition ,#weekday_select{
+    width: 350px;
+}
+.task-repetition select{
+    padding: 5px 0 5px 2px;
+    width: 100%;
+}
+

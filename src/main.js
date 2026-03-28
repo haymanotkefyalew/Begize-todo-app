@@ -16,8 +16,42 @@ const newTaskM=document.querySelector(".tasks-modal-none")
 const taskName=document.querySelector("#task-title")
 const taskDescription=document.querySelector("#task-description")
 const dueDate=document.querySelector("#task-date")
+const dueDateC=document.querySelector(".task-date")
+const taskRepetition=document.querySelector(".task-repetition")
 const tasks=document.querySelector(".tasks")
 
+taskRepetition.addEventListener("change",(event)=>{
+    const selectedValue=event.target.value
+                if(selectedValue=="daily"){
+                dueDateC.innerHTML=``
+            }else if(selectedValue=="onetime"){
+                dueDateC.innerHTML=`
+                <label>Due Date</label> <br/> 
+                <input type="date" id="task-date" />
+                `
+            }else if(selectedValue=="monthly"){
+                dueDateC.innerHTML=`
+                <label>Monthly</label> <br/> 
+                <input type="date" id="task-date" />
+                `
+            }else{
+                dueDateC.innerHTML=`
+                <label for="weekday_select">Select a day:</label>
+                <br/>
+<select id="weekday_select" name="weekday">
+  <option value="Monday">Monday</option>
+  <option value="Tuesday">Tuesday</option>
+  <option value="Wednesday">Wednesday</option>
+  <option value="Thursday">Thursday</option>
+  <option value="Friday">Friday</option>
+  <option value="Saturday">Saturday</option>
+  <option value="Sunday">Sunday</option>
+</select>
+
+                `
+            }
+
+})
 
 
 addNewCategory.addEventListener("click",()=>{

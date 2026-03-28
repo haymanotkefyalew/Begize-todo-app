@@ -10,7 +10,8 @@
   </head>
   <body>
     <div class="modals">
-      <div class="projects-modal-none">
+      <div class="projects-modal-none flex">
+        <button class="cancel-pmodal">X</button>
         <h3>Add new Project</h3>
         <form action="/" class="projects-form">
           <div class="project-name">
@@ -27,9 +28,13 @@
             ></textarea>
           </div>
         </form>
-        <button class="save-project">Save</button>
+        <div class="projects-modal-btns">
+          <button class="save-project">Save</button>
+        </div>
       </div>
-      <div class="tasks-modal-none">
+      <div class="tasks-modal-none flex">
+        <button class="cancel-tmodal">X</button>
+        <h3>Add new Task</h3>
         <form action="/" class="tasks-form">
           <div class="task-title">
             <label for="task-title">Title</label><br />
@@ -41,8 +46,18 @@
               name="taskDescription"
               id="task-description"
               cols="45"
-              rows="8"
+              rows="5"
             ></textarea>
+          </div>
+          <div class="task-repetition">
+            <select name="repetition" id="task-repetition">
+              <option selected value="onetime" class="options option1">
+                Specific Date
+              </option>
+              <option value="daily" class="options option2">Daily</option>
+              <option value="weekly" class="options">Weekly</option>
+              <option value="monthly" class="options">Monthly</option>
+            </select>
           </div>
           <div class="task-date">
             <label for="task-date">Due Date</label><br />

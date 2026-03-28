@@ -115,3 +115,31 @@ function renderMain() {
         </div>
     `).join('');
 }
+
+function renderDetails() {
+    const panel = document.getElementById('detail-panel');
+    if (!selectedTaskId) {
+        panel.innerHTML = '<div class="placeholder">Select a task for details</div>';
+        return;
+    }
+
+    let foundTask, foundProj;
+    projects.forEach(p => {
+        const t = p.tasks.find(tk => tk.id === selectedTaskId);
+        if(t) { foundTask = t; foundProj = p; }
+    });
+
+    if(!foundTask) return;
+
+    panel.innerHTML = `
+        <h3>${foundTask.title}</h3>
+        <p style="margin: 15px 0; color: #666">${foundTask.desc || 'No description'}</p>
+        <hr><br>
+        <p><strong>Project:</strong> ${foundProj.name}</p>
+        <p><strong>Due:</strong> ${foundTask.date || 'Not set'}</p>
+        <p><strong>Recurrence:</strong> ${foundTask.recurrence}</p>
+        <br>
+        <button style="color:red; border:1px solid red; background:none; padding:5px; cursor:pointer" 
+                onclick="deleteTask(${foundProj.id}, ${foundTask.id})">Delete Task</button>
+    `;
+}

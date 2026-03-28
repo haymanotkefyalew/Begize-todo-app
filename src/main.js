@@ -34,3 +34,23 @@ function addProject(){
     nameInput.value = '';
     descInput.value = '';
 }
+
+function addTask() {
+    const title = document.getElementById('task-title').value;
+    if (!title) return alert("Enter a task title");
+    if (!currentView.startsWith('project-')) return alert("Select a project category first");
+
+    const projectId = parseInt(currentView.split('-')[1]);
+    const project = projects.find(p => p.id === projectId);
+
+    const newTask = {
+        id: Date.now(),
+        title: title,
+        desc: document.getElementById('task-description').value,
+        date: document.getElementById('task-date').value,
+        recurrence: document.getElementById('task-repetition').value,
+        priority: 'normal',
+        completed: false
+    };
+    project.tasks.push(newTask);
+}

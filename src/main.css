@@ -228,9 +228,11 @@ body{
 
 .cancel-pmodal,.cancel-tmodal{
     align-self: flex-end;
-    margin-right: 80px;
+    margin-right: 60px;
     margin-bottom: -35px;
     font-size: 30px;
+    background-color: var(--white);
+    border:none;
 }
 .cancel-tmodal{
     margin-bottom: -50px;

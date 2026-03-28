@@ -1,3 +1,5 @@
+import { saveUserInfo,getUserInfo } from "./modules/user-info";
+
 const logInBtnN=document.querySelectorAll(".nbtn1");
 const logInBtnH=document.querySelectorAll(".hbtn1");
 const logInModal=document.querySelector(".login-modal-none")
@@ -92,8 +94,8 @@ modalSubmit.addEventListener("click",(e)=>{
        return
     }
     clearWindowS();
-    let userInfo=[sFullName.value.trim(),sUsername.value.trim(),sPass.textContent.trim()]
-    let userObject=signupObject(...userInfo);
+    let userInfo=[sFullName.value.trim(),sUsername.value.trim(),sPass.value.trim()]
+    saveUserInfo(...userInfo)
 
     signUpModal.classList.remove("flex")
     document.body.classList.remove("no-scroll")

@@ -33,6 +33,8 @@ function addProject(){
     projects.push(newProj);
     nameInput.value = '';
     descInput.value = '';
+    closeModals();
+    render();
 }
 
 function addTask() {
@@ -53,18 +55,28 @@ function addTask() {
         completed: false
     };
     project.tasks.push(newTask);
+    closeModals();
+    render();
 }
 
 function toggleTask(projId, taskId) {
     const project = projects.find(p => p.id === projId);
     const task = project.tasks.find(t => t.id === taskId);
     task.completed = !task.completed;
+    render();
 }
 
 function deleteTask(projId, taskId) {
     const project = projects.find(p => p.id === projId);
     project.tasks = project.tasks.filter(t => t.id !== taskId);
     selectedTaskId = null;
+    render();
+}
+
+function render() {
+    renderSidebar();
+    renderMain();
+    renderDetails();
 }
 
 function renderSidebar() {
@@ -142,4 +154,26 @@ function renderDetails() {
         <button style="color:red; border:1px solid red; background:none; padding:5px; cursor:pointer" 
                 onclick="deleteTask(${foundProj.id}, ${foundTask.id})">Delete Task</button>
     `;
+}
+
+
+function setView(v) { 
+    currentView = v; 
+    selectedTaskId = null;
+    render(); 
+}
+
+function selectTask(id) { 
+    selectedTaskId = id; 
+    render(); 
+}
+
+function openModal(type) {
+    document.getElementById('overlay').classList.remove('hidden');
+    document.querySelector(`.${type}-modal`).classList.remove('hidden');
+}
+
+function closeModals() {
+    document.getElementById('overlay').classList.add('hidden');
+    document.querySelectorAll('.projects-modal, .tasks-modal').forEach(el => el.classList.add('hidden'));
 }

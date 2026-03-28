@@ -3,7 +3,6 @@ export function saveUserInfo(fullName,username,password){
     localStorage.setItem("user",JSON.stringify(user))
 }
 export function getUserInfo(){
-    let user= localStorage.getItem("user")
-    user=JSON.parse(user)
-    return user;
+    const data = localStorage.getItem("user");
+    return data ? JSON.parse(data) : null;
 }

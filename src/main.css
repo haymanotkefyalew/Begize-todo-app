@@ -72,11 +72,17 @@ body{
     overflow-y: auto;
 }
 
-.view-header {
+#view-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    border-bottom: solid 1px var(--black);
+}
+#view-header button{
+    padding: 5px 20px;
+    background-color: var(--white);
+    font-weight: 600px;
 }
 
 /* right side */
@@ -196,6 +202,12 @@ body{
     border: solid 2px var(--black);
     text-align: center;
     background-color: var(--white);
+}
+
+.weekday{
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px ;
 }
 /* manage projects */
 .addNewCategory{

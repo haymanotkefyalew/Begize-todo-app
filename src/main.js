@@ -54,3 +54,9 @@ function addTask() {
     };
     project.tasks.push(newTask);
 }
+
+function toggleTask(projId, taskId) {
+    const project = projects.find(p => p.id === projId);
+    const task = project.tasks.find(t => t.id === taskId);
+    task.completed = !task.completed;
+}

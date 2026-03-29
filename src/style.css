@@ -140,6 +140,9 @@ p{
     width: 70%;
     border-radius:30px ;
     overflow: hidden;
+    padding: 5px;
+    background: #2563EB;
+        background: linear-gradient(90deg, rgba(37, 99, 235, 1) 0%, rgba(164, 93, 35, 1) 40%, rgba(183, 204, 27, 1) 61%, rgba(34, 197, 94, 1) 76%);
 }
 .hero-img{
     width: 100%;
@@ -339,6 +342,7 @@ background-color: var(--secondary-shade2);
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
+    backdrop-filter: blur(2px);
 }
 .signup-modal,.login-modal{
     background-color: var(--white);
@@ -356,6 +360,8 @@ background-color: var(--secondary-shade2);
     margin: 0 auto;
     padding: 20px 10px;
     z-index: 11;
+    border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 .signup-modal{
     height: 550px;

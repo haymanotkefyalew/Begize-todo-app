@@ -46,8 +46,14 @@ function loginObject(username,password){
 
 // events
 
-cancelS.addEventListener('click', closeModals)
-cancelL.addEventListener('click', closeModals)
+cancelS.addEventListener('click',()=> {
+    clearWindowS();
+    closeModals();
+})
+cancelL.addEventListener('click',()=> {
+    clearWindowL();
+    closeModals();
+})
 
 // buttons
 let logInButtons=[...logInBtnN,...logInBtnH]

@@ -118,7 +118,7 @@ function addTask() {
         id: Date.now(),
         title: title,
         desc: document.getElementById('task-description').value,
-        date: repetition=="weekly"?day:document.getElementById('task-date').value,
+        date: repetition=="weekly"?day:repetition=="daily"?"Not Set":document.getElementById('task-date').value,
         recurrence: document.getElementById('task-repetition').value,
         priority: document.getElementById("priority").value,
         completed: false
@@ -249,4 +249,9 @@ function openModal(type) {
 function closeModals() {
     document.getElementById('overlay').classList.add('hidden');
     document.querySelectorAll('.projects-modal, .tasks-modal').forEach(el => el.classList.add('hidden'));
+
+     document.getElementById('task-description').value="";
+     document.getElementById('task-title').value="";
+     document.getElementById('project-name').value="";
+    document.getElementById('project-description').value="";
 }

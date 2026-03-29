@@ -6,6 +6,13 @@ let repetition=""
 let day=""
 
 
+window.setView = setView;
+window.selectTask = selectTask;
+window.toggleTask = toggleTask;
+window.deleteTask = deleteTask;
+window.openModal = openModal;
+window.closeModals = closeModals;
+
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     getProjectsStored();

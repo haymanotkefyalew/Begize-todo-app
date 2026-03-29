@@ -14,22 +14,25 @@ ul li{
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f8fafc;
 }
 
 :root{
-    --primary-base:#023e8a;
-    --primary-shade:#03045e;
-    --primary-tint:#0096c7;
+    --primary-base: #2563eb;
+    --primary-shade: #1e3a8a;
+    --primary-tint: #dbeafe;
+    
+    --secondary-base: #22c55e;
+    --secondary-shade: #14532d;
+    --secondary-tint: #dcfce7;
 
-    --secondary-base:#e40b0b;
-    --secondary-shade:#6a040f;
-    --secondary-tint:#dc2f02;
-
+    --secondary-shade2: #0f172a;
     --black:#000;
     --white:#fff;
     --gray-dark:#212529;
     --gray-base:#343a40;
     --gray-light:#6c757d;
+    --gray-light2:#e6e6e6;
 }
 
 /* Containers and types styles*/
@@ -43,7 +46,7 @@ h1{
     letter-spacing: -2px;
     width: 90%;
     line-height: 1.2;
-    color: var(--gray-base);
+    color: var(--gray-dark);
 }
 h2{
     font-size: 42px;
@@ -71,7 +74,7 @@ p{
     left: 0;
     margin: 2px auto 0;
     background-color: var(--white);
-    /* box-shadow: 0 0.1px 1px 1px var(--gray-light); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 .main-nav{
     display: flex;
@@ -88,13 +91,13 @@ p{
 }
 .nav-links a:link , .nav-links a:visited{
     font-size: 18px;
-    font-weight: 400;
-    color: var(--primary-base);
+    font-weight: 450;
+    color: var(--gray-dark);
 }
 .nav-links a:hover , .nav-links a:active{
     font-weight: 600;
-    color: var(--primary-shade);
-    border-bottom: solid 2px var(--primary-shade);
+    color: var(--primary-base);
+    border-bottom: solid 2px var(--primary-base);
 }
 .main-components{
     display: flex;
@@ -152,8 +155,11 @@ p{
     text-align: center;
     gap: 70px;
     margin: 130px auto;
-    background-color: #caf0f850;
-    padding: 30px 10px;
+    
+    padding: 70px 10px;
+}
+.features-container{
+background-color: var(--secondary-shade2);
 }
 .features-text-cont{
     display: flex;
@@ -164,7 +170,12 @@ p{
 }
 .features-text{
     width: 90%;
+    color: var(--gray-light2);
 }
+.features-heading{
+    color: var(--white);
+}
+
 .cards{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
@@ -183,11 +194,12 @@ p{
     gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 5px var(--gray-light);
     height: 300px;
     padding: 0 15px;
-    background-color: var(--white);
     border-radius: 10px;
+    background-color: var(--white);
+    color: var(--gray-dark);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -212,13 +224,15 @@ p{
     max-width: 950px;
     width: 90%;
     gap: 10px;
-    background: linear-gradient(to right,  var(--gray-dark) , var(--gray-light));
+    background: linear-gradient(to right,
+                var(--primary-shade),
+                var(--primary-base));
     padding: 35px 39px;
     border-radius: 40px;
 }
 .cta-text{
     margin-bottom: 40px;
-    color:var(--white);
+    color:var(--gray-light2);
     opacity: 0.8;
     width: 90%;
     line-height: 1.5;
@@ -234,6 +248,7 @@ p{
     gap: 30px;
     margin-left: 30px;
     margin-bottom: 100px;
+    padding: 70px 10px;
 }
 .contact-form{
     display: flex;
@@ -253,6 +268,23 @@ p{
     cursor: pointer;
 }
 
+.contact-heading {
+    color: var(--gray-dark);
+}
+
+.contact-text {
+    color: var(--gray-light);
+}
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid var(--gray-light2);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-base);
+}
+
 /* footer section */
 .main-footer{
     display: flex;
@@ -260,8 +292,7 @@ p{
     align-items: center;
     padding: 30px 50px;
     gap: 50px;
-    
-    background-color: #023e8a;
+    background-color: var(--secondary-shade2);
 }
 .footer-content{
     display: flex;
@@ -282,7 +313,14 @@ p{
     gap: 15px;
 
 }
-.footer-links a{
+
+.footer-links a,
+.footer-social a {
+    color: var(--gray-light2);
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
     color: var(--white);
 }
 .footer-social{
@@ -291,9 +329,7 @@ p{
     gap: 15px;
     cursor: pointer;
 }
-.footer-social a{
-        color: var(--white);
-}
+
 /* signup modal */
 #overlay {
     position: fixed;
@@ -343,6 +379,13 @@ p{
 
 .modal-submit , .lmodal-submit{
     width: 350px;
+    background-color: var(--primary-base);
+    color: var(--white);
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500px;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -363,8 +406,23 @@ form span{
     background-color: var(--white);
     border: none;
     cursor: pointer;
+    color: var(--gray-dark);
 }
 
+.nothave-acc,.have-acc{
+    font-size: 16px;
+}
+.nothave-acc .nbtn2,.have-acc .nbtn1{
+    color: var(--primary-shade);
+    background-color: var(--white);
+    text-decoration: underline;
+}
+.nothave-acc .nbtn2:hover,
+.have-acc .nbtn1:hover{
+    color: var(--primary-shade);
+    background-color: var(--white);
+    font-size: 17px;
+}
 /* components */
 
 .nbtn{
@@ -377,21 +435,7 @@ form span{
     cursor: pointer;
     border-radius: 5px;
 }
-.nbtn1{
-    color: var(--primary-base);
-}
-.nbtn2{
-    color: var(--white);
-    background-color: var(--primary-base);
-}
-.hbtn1{
-    color: var(--primary-base);
-}
-.hbtn2{
-    color: var(--white);
-    background-color: var(--primary-base);
-}
-.hbtn{
+.hbtn {
     padding: 10px 15px;
     width: 140px;
     font-size: 16px;
@@ -401,41 +445,55 @@ form span{
     cursor: pointer;
     border-radius: 5px;
 }
+.nbtn2,.hbtn2{
+    background-color: var(--primary-base);
+    color: var(--white);
+}
+.hbtn1,.nbtn1{
+    color: var(--primary-base);
+}
+.hbtn1:hover,.nbtn1:hover{
+
+    background-color: var(--primary-tint);
+}
+.nbtn2:hover,
+.hbtn2:hover {
+    background-color: var(--primary-shade);
+    border-color: var(--primary-shade);
+}
+
 .cta-component{
     padding: 15px 25px;
     font-size: 16px;
     font-weight: 500px;
-    border: solid 2px blue;
-    background-color: blue;
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary-base);
+    border: none;
     text-align: center;
     cursor: pointer;
     border-radius: 10px;
 }
 .cta-component:hover{
-    border: solid 2px rgb(4, 4, 212);
-    background-color: rgb(4, 4, 212)
+    background-color: var(--primary-tint);
 
 }
 .submit-button{
     padding: 15px 25px;
     font-size: 16px;
     font-weight: 500px;
-    border: solid 2px var(--black);
     text-align: center;
-    background-color: var(--white);
     cursor: pointer;
+    background-color: var(--secondary-base);
+    color: var(--white);
+    border: none;
 }
-.modal-submit,
-.lmodal-submit{
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 500px;
-    border: solid 2px var(--black);
-    text-align: center;
-    background-color: var(--white);
-    cursor: pointer;
+
+
+.submit-button:hover {
+    background-color: var(--secondary-shade);
 }
+
+
 .no-scroll{
     overflow: hidden;
 }

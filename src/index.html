@@ -35,10 +35,6 @@
             <input type="password" id="modal-confirm" autocomplete />
             <p class="cs-invalid"></p>
           </div>
-          <div class="modal-agree">
-            <input type="checkbox" name="agree" value="yes" id="agree" />
-            <label for="agree">Accept terms and conditions.</label>
-          </div>
           <button class="modal-submit">Sign up</button>
         </form>
         <p class="have-acc">
@@ -72,8 +68,8 @@
           </div>
           <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="main-components">
             <li><a href="#" class="nbtn nbtn1">Login</a></li>
@@ -103,48 +99,50 @@
             />
           </div>
         </section>
-        <section class="features-section">
-          <div class="features-text-cont">
-            <h2 class="features-heading">
-              Powerful Features to Simplify <br />
-              Your Day
-            </h2>
-            <p class="features-text">
-              Begize gives you everything you need to stay organized and
-              productive. From managing daily tasks to tracking your progress,
-              our tools are designed to help you work smarter, stay focused, and
-              achieve more with less effort.
-            </p>
-          </div>
-          <div class="cards">
-            <div class="card card1">
-              <h3 class="card-heading">Smart Task Management</h3>
-              <p class="card-text">
-                Organize tasks with priorities, deadlines, and categories—all in
-                one intuitive interface.
+        <div class="features-container">
+          <section class="features-section" id="features">
+            <div class="features-text-cont">
+              <h2 class="features-heading">
+                Powerful Features to Simplify <br />
+                Your Day
+              </h2>
+              <p class="features-text">
+                Begize gives you everything you need to stay organized and
+                productive. From managing daily tasks to tracking your progress,
+                our tools are designed to help you work smarter, stay focused,
+                and achieve more with less effort.
               </p>
             </div>
-            <div class="card card2">
-              <h3 class="card-heading">Reminders & Notifications</h3>
-              <p class="card-text">
-                Never forget a task again with timely alerts and reminders.
-              </p>
+            <div class="cards">
+              <div class="card card1">
+                <h3 class="card-heading">Smart Task Management</h3>
+                <p class="card-text">
+                  Organize tasks with priorities, deadlines, and categories—all
+                  in one intuitive interface.
+                </p>
+              </div>
+              <div class="card card2">
+                <h3 class="card-heading">Reminders & Notifications</h3>
+                <p class="card-text">
+                  Never forget a task again with timely alerts and reminders.
+                </p>
+              </div>
+              <div class="card card3">
+                <h3 class="card-heading">Cross-Platform Sync</h3>
+                <p class="card-text">
+                  Access your tasks anytime, anywhere—on mobile, tablet, or
+                  desktop.
+                </p>
+              </div>
+              <div class="card card4">
+                <h3 class="card-heading">Minimal & Clean Design</h3>
+                <p class="card-text">
+                  Stay focused with a distraction-free, user-friendly interface.
+                </p>
+              </div>
             </div>
-            <div class="card card3">
-              <h3 class="card-heading">Cross-Platform Sync</h3>
-              <p class="card-text">
-                Access your tasks anytime, anywhere—on mobile, tablet, or
-                desktop.
-              </p>
-            </div>
-            <div class="card card4">
-              <h3 class="card-heading">Minimal & Clean Design</h3>
-              <p class="card-text">
-                Stay focused with a distraction-free, user-friendly interface.
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
         <section class="cta-section">
           <div class="cta-card">
             <h2 class="cta-heading">Start Organizing Your Life Today</h2>
@@ -156,7 +154,7 @@
             <a href="#" class="cta-component">Create Your First Task</a>
           </div>
         </section>
-        <section class="contact-section">
+        <section class="contact-section" id="contact">
           <div class="contact-text-cont">
             <h2 class="contact-heading">Get in Touch</h2>
             <p class="contact-text">
@@ -179,8 +177,8 @@
               <textarea
                 name="user-message"
                 id="message"
-                cols="45"
-                rows="8"
+                cols="43"
+                rows="5"
               ></textarea>
             </div>
             <button type="button" class="submit-button">Send Message</button>
@@ -194,8 +192,8 @@
           </div>
           <ul class="footer-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
           </ul>

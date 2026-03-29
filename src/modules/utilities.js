@@ -19,6 +19,12 @@ export function closeModals() {
     document.body.classList.remove("no-scroll")
     document.getElementById('overlay').classList.add('hidden');
     document.querySelectorAll('.signup-modal, .login-modal').forEach(el => el.classList.add('hidden'));
+    document.querySelector(".us-invalid").textContent=""
+    document.querySelector(".fs-invalid").textContent=""
+    document.querySelector(".ps-invalid").textContent=""
+    document.querySelector(".cs-invalid").textContent=""
+    document.querySelector(".u-invalid").textContent=""
+    document.querySelector(".p-invalid").textContent=""
 }
 
 export function openModal(type) {

@@ -30,7 +30,6 @@ const sFullName=document.querySelector("#modal-name")
 const sUsername=document.querySelector("#modal-username")
 const sPass=document.querySelector("#modal-password")
 const sPassC=document.querySelector("#modal-confirm")
-const sAgree=document.querySelector("#agree")
 
 
 //login info

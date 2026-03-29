@@ -11,13 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
 });
 
+
 function getProjectsStored(){
     const data = localStorage.getItem("project");
     projects = data ? JSON.parse(data) : [];
 }
+
+
 function SaveProjects(){
     localStorage.setItem("project", JSON.stringify(projects))
 }
+
+
 function renderDueType(type){
     const taskDate=document.querySelector(".task-date")
     if(type=="daily") {

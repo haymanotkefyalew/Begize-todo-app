@@ -23,11 +23,6 @@ body{
 
 
 
-.footer{
-    grid-area: footer;
-}
-
-
 /* side bar- */
 
 .sidebar {
@@ -83,16 +78,8 @@ body{
     padding: 5px 20px;
     background-color: var(--white);
     font-weight: 600px;
+    cursor: pointer;
 }
-
-/* right side */
-
-.right-sidebar {
-    grid-area: other;
-    padding: 20px;
-    overflow-y: auto;
-}
-
 
 
 /* Task Cards */
@@ -143,9 +130,7 @@ body{
     gap: 5px;
 }
 
-
 /* modals */
-
 #overlay {
     position: fixed;
     top: 0;
@@ -166,15 +151,15 @@ body{
     background-color: var(--white);
     gap: 40px;
     display: flex;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 500px;
-        height: 500px;
-        margin: 0 auto;
-        padding: 20px 10px;
-        z-index: 11;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    z-index: 11;
 }
 
 .projects-form input,.tasks-form input {
@@ -202,6 +187,7 @@ body{
     border: solid 2px var(--black);
     text-align: center;
     background-color: var(--white);
+    cursor: pointer;
 }
 
 .weekday{

@@ -14,3 +14,15 @@ export function clearWindowL(){
     lPassC.value=""
     lUsernameC.value=""
 }
+
+export function closeModals() {
+    document.body.classList.remove("no-scroll")
+    document.getElementById('overlay').classList.add('hidden');
+    document.querySelectorAll('.signup-modal, .login-modal').forEach(el => el.classList.add('hidden'));
+}
+
+export function openModal(type) {
+    document.body.classList.add("no-scroll")
+    document.getElementById('overlay').classList.remove('hidden');
+    document.querySelector(`.${type}-modal`).classList.remove('hidden');
+}

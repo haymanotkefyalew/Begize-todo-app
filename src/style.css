@@ -34,7 +34,6 @@ ul li{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto auto;
-
 }
 h1{
     font-size: 68px;
@@ -98,6 +97,7 @@ p{
     align-items: center;
     gap: 20px;
     margin-top: 50px;
+    cursor: pointer;
 }
 .hero-text{
     width: 98%;
@@ -107,19 +107,19 @@ p{
 .features-section{
     display: flex;
     flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 1200px;
-        text-align: center;
-        gap: 30px;
-        margin: 130px auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    text-align: center;
+    gap: 30px;
+    margin: 130px auto;
 }
 .features-text-cont{
     display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 98%;
-        gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 98%;
+    gap: 10px;
 }
 .cards{
     display: grid;
@@ -185,6 +185,7 @@ p{
 
 .submit-button{
     width: 350px;
+    cursor: pointer;
 }
 
 /* footer section */
@@ -208,19 +209,39 @@ p{
 }
 .footer-social{
     display: flex;
-        flex-direction: column;
-        gap: 15px;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
 }
 /* signup modal */
-
-.signup-modal-none,.login-modal-none{
-    /* display: flex; */
-    display: none;
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.signup-modal,.login-modal{
+    background-color: var(--white);
+    gap: 40px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--white);
-    gap: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    z-index: 11;
+}
+.signup-modal{
+    height: 550px;
 }
 .signup-modal-form,.login-modal-form{
     display: flex;
@@ -241,22 +262,26 @@ p{
 
 .modal-submit , .lmodal-submit{
     width: 350px;
+    cursor: pointer;
 }
 
 form span{
     color: red;
     margin-left: 3px;
 }
-.flex{
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 550px;
-    margin: 0 auto;
-    padding: 20px 10px;
+.hidden{
+   display: none;
+}
+
+.cancel-lmodal,
+.cancel-smodal {
+    align-self: flex-end;
+    margin-right: 60px;
+    margin-bottom: -35px;
+    font-size: 30px;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
 }
 
 /* components */
@@ -268,21 +293,24 @@ form span{
     font-weight: 500px;
     border: solid 2px var(--black);
     text-align: center;
+    cursor: pointer;
 }
 .hbtn{
     padding: 10px 20px;
-        width: 120px;
-        font-size: 16px;
-        font-weight: 500px;
-        border: solid 2px var(--black);
-        text-align: center;
+    width: 120px;
+    font-size: 16px;
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+    cursor: pointer;
 }
 .cta-component{
-        padding: 15px 25px;
-        font-size: 16px;
-        font-weight: 500px;
-        border: solid 2px var(--black);
-        text-align: center;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+    cursor: pointer;
 }
 .submit-button{
     padding: 15px 25px;
@@ -291,15 +319,17 @@ form span{
     border: solid 2px var(--black);
     text-align: center;
     background-color: var(--white);
+    cursor: pointer;
 }
 .modal-submit,
 .lmodal-submit{
     padding: 15px 20px;
     font-size: 16px;
-        font-weight: 500px;
-        border: solid 2px var(--black);
-        text-align: center;
-        background-color: var(--white);
+    font-weight: 500px;
+    border: solid 2px var(--black);
+    text-align: center;
+    background-color: var(--white);
+    cursor: pointer;
 }
 .no-scroll{
     overflow: hidden;

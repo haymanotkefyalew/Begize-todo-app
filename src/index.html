@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="overlay" class="hidden"></div>
     <div class="page-container">
-      <div class="signup-modal-none">
+      <div class="signup-modal hidden">
+        <button class="cancel-smodal">X</button>
         <h3>Sign Up</h3>
         <form action="/" class="signup-modal-form">
           <div class="modal-name">
@@ -43,7 +45,8 @@
           Already have an account? <a href="#" class="nbtn1">Login</a>
         </p>
       </div>
-      <div class="login-modal-none">
+      <div class="login-modal hidden">
+        <button class="cancel-lmodal">X</button>
         <h3>Log In</h3>
         <form action="/" class="login-modal-form">
           <div class="lmodal-username">

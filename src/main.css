@@ -1,6 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+a,
+img,
+button,
+label {
+    display: inline-block;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.02);
+}
+button,
+input {
+    transition: all 0.2s ease;
+}
+input:not[type="checkbox"],
+textarea,
+select {
+    padding: 8px 10px;
+    border: 1px solid var(--gray-light2);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+    width: 100%;
+    max-width: 350px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-base);
+    box-shadow: 0 0 0 2px var(--primary-tint);
+    outline: none;
+}
+
+::placeholder {
+    color: var(--gray-light);
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
 body{
     height: 100vh;
     overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f8fafc;
+}
+:root {
+    --primary-base: #2563eb;
+    --primary-shade: #1e3a8a;
+    --primary-tint: #dbeafe;
+
+    --secondary-base: #22c55e;
+    --secondary-shade: #14532d;
+    --secondary-tint: #dcfce7;
+
+    --secondary-shade2: #0f172a;
+    --black: #000;
+    --white: #fff;
+    --gray-dark: #212529;
+    --gray-base: #343a40;
+    --gray-light: #6c757d;
+    --gray-light2: #e6e6e6;
 }
 
 .main-container{
@@ -10,18 +99,96 @@ body{
     grid-template-areas: "header header header" "sidebar main details" "footer footer footer";
     height: 100vh;
 }
+/* details */
+.placeholder {
+    color: var(--gray-light);
+    text-align: center;
+    margin-top: 50px;
+}
 .detail-panel{
     grid-area: details;
+    background-color: white;
+    border-left: 1px solid var(--gray-light2);
+    padding: 20px;
 }
+/* header */
 .m-header{
     grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
+/* background-color: var(--gray-base);
+    
+    color: white; */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+    padding: 0 24px;
+    height: 60px;
 }
 
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f5f9;
+    padding: 0 10px;
+    border-radius: 8px;
+    
+}
 
+.search label{
+    font-size: 20px;
+}
+.search input {
+    width: 320px;
+    height: 36px;
+    background-color: #f1f5f9;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.search input:focus {
+    background-color: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.search input::placeholder {
+    color: #94a3b8;
+}
+.profile-photo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.profile-photo:hover {
+    background-color: #f1f5f9;
+}
+.profile-photo img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.categories .active-nav {
+    background-color: var(--primary-base);
+    color: white;
+}
+.usernamec {
+    font-size: 14px;
+    font-weight: 500;
+}
+.m-logo img {
+    height: 32px;
+}
 
 /* side bar- */
 
@@ -32,6 +199,8 @@ body{
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
+    background-color: white;
+    border-right: 1px solid var(--gray-light2);
 
 }
 .sidebar h3{
@@ -57,6 +226,9 @@ body{
     border-radius: 6px;
     cursor: pointer;
 }
+.sidebar button:hover {
+    background-color: var(--primary-tint);
+}
 
 
 /* main content */
@@ -77,7 +249,7 @@ body{
 #view-header button{
     padding: 5px 20px;
     background-color: var(--white);
-    font-weight: 600px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -85,16 +257,21 @@ body{
 /* Task Cards */
 .task-card {
     background: white;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 16px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
 .task-card.high {
     border-left: 4px solid #ef4444;
 }
@@ -113,22 +290,6 @@ body{
 }
 
 
-/* search */
-.search{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.search input{
-    width: 450px;
-    height: 35px;
-}
-.profile-photo{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
 
 /* modals */
 #overlay {
@@ -139,6 +300,7 @@ body{
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
+    backdrop-filter: blur(2px);
 }
 .hidden{
     display: none !important;
@@ -156,10 +318,12 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-    height: 500px;
+    height: 560px;
     margin: 0 auto;
     padding: 20px 10px;
     z-index: 11;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .projects-form input,.tasks-form input {
@@ -173,7 +337,7 @@ body{
 .projects-form label ,.tasks-form label{
     margin-bottom: 6px;
 }
-.projects-modal-none form , .tasks-modal-none form{
+.projects-modal form , .tasks-modal form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,16 +348,27 @@ body{
     padding: 15px 20px;
     font-size: 16px;
     font-weight: 500px;
-    border: solid 2px var(--black);
+    border: solid 2px var(--primary-base);
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--primary-base);
+    color: var(--white);
     cursor: pointer;
+}
+
+.save-project:hover,
+.save-task:hover {
+    background-color: var(--primary-shade);
+    border: solid 2px var(--primary-shade);
 }
 
 .weekday{
     margin-top: 10px;
     width: 100%;
     padding: 5px ;
+}
+#priority{
+    margin-top: 10px;
+    width: 270px;
 }
 /* manage projects */
 .addNewCategory{
@@ -216,12 +391,17 @@ body{
     align-self: flex-end;
     margin-right: 60px;
     margin-bottom: -35px;
-    font-size: 30px;
     background-color: var(--white);
     border:none;
+    font-size: 20px;
+    opacity: 0.6;
 }
 .cancel-tmodal{
     margin-bottom: -50px;
+}
+.cancel-pmodal:hover,
+.cancel-tmodal:hover {
+    opacity: 1;
 }
 .task-repetition ,#weekday_select{
     width: 350px;

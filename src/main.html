@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Begize |main page</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="stylesheet" href="main.css" />
     <script src="main.js" defer></script>
   </head>
@@ -64,6 +64,14 @@
             <label for="task-date">Due Date</label><br />
             <input type="date" id="task-date" />
           </div>
+          <div class="priority">
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
         </form>
         <button class="save-task">Save</button>
       </div>
@@ -76,8 +84,8 @@
           /></a>
         </div>
         <div class="search">
-          <label for="search">Icon</label>
-          <input type="search" name="search" id="search" />
+          <label for="search">🔍</label>
+          <input type="search" name="search" id="search" placeholder="search" />
         </div>
         <div class="profile">
           <div class="profile-photo">

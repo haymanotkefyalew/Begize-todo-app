@@ -7,7 +7,8 @@ let day=""
 
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
-    getProjectsStored()
+    getProjectsStored();
+    setProfile();
     render();
 });
 
@@ -15,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function getProjectsStored(){
     const data = localStorage.getItem("project");
     projects = data ? JSON.parse(data) : [];
+}
+function setProfile(){
+    const data = localStorage.getItem("user");
+    let user= data ?JSON.parse(data):[];
+    let username= user?user.username:"Anonymous";
+    document.querySelector(".usernamec").textContent=username;
 }
 
 
@@ -113,7 +120,7 @@ function addTask() {
         desc: document.getElementById('task-description').value,
         date: repetition=="weekly"?day:document.getElementById('task-date').value,
         recurrence: document.getElementById('task-repetition').value,
-        priority: 'normal',
+        priority: document.getElementById("priority").value,
         completed: false
     };
     project.tasks.push(newTask);
@@ -182,7 +189,7 @@ function renderMain() {
     `;
     
     list.innerHTML = tasksToShow.map(t => `
-        <div class="task-card ${t.completed ? 'completed' : ''}" onclick="selectTask(${t.id})">
+        <div class="task-card ${t.completed ? 'completed' : ''} ${t.priority}" onclick="selectTask(${t.id})">
             <input type="checkbox" ${t.completed ? 'checked' : ''} 
                    onclick="event.stopPropagation(); toggleTask(${t.projId}, ${t.id})">
             <div style="flex:1">
@@ -215,6 +222,7 @@ function renderDetails() {
         <p><strong>Project:</strong> ${foundProj.name}</p>
         <p><strong>Due:</strong> ${foundTask.date || 'Not set'}</p>
         <p><strong>Recurrence:</strong> ${foundTask.recurrence}</p>
+        <p><strong>Priority:</strong> ${foundTask.priority}</p>
         <br>
         <button style="color:red; border:1px solid red; background:none; padding:5px; cursor:pointer" 
                 onclick="deleteTask(${foundProj.id}, ${foundTask.id})">Delete Task</button>

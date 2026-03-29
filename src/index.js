@@ -1,6 +1,7 @@
 import { saveUserInfo,getUserInfo } from "./modules/user-info.js";
 import { validateName,validatePassword,validateUsername } from "./modules/validate-input.js";
 import { clearWindowL,clearWindowS,closeModals,openModal } from "./modules/utilities.js";
+import "./style.css"
 
 
 // login node elements

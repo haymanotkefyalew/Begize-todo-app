@@ -233,22 +233,25 @@ background-color: var(--secondary-shade2);
     justify-content: center;
     max-width: 950px;
     width: 90%;
-    gap: 1rem;
-    background: linear-gradient(to right,
-                var(--primary-shade),
-                var(--primary-base));
+     gap: 1rem;
+     /*
+    background-color: var(--primary-base); */
     padding: 3.5rem 3.9rem;
     border-radius: 40px;
+    background-color:rgba(255, 255, 255, 1);
+    box-shadow: 0 1.5rem 35px var(--primary-base);
 }
 .cta-text{
     margin-bottom: 4rem;
-    color:var(--gray-light2);
+    /* color:var(--gray-light2); */
+    
     opacity: 0.8;
     width: 90%;
     line-height: 1.5;
 }
 .cta-heading{
-    color: var(--white);
+    /* color: var(--white); */
+    color: var(--primary-shade);
 }
 
 /* contacts */
@@ -269,6 +272,11 @@ background-color: var(--secondary-shade2);
     width: 35rem;
     height: 3rem;
 }
+.contact-form textarea{
+    width: 35rem;
+    height: 10rem;
+}
+
 .contact-form label{
     margin-bottom: 6px;
     font-size: 1.8rem;
@@ -445,8 +453,8 @@ form span{
 
 .nbtn{
     padding :1rem 1.5rem;
-    width: 115px;
-    font-size: 16px;
+    width: 11.5rem;
+    font-size: 1.6rem;
     font-weight: bolder;
     border: solid 2px var(--primary-base);
     text-align: center;
@@ -484,15 +492,15 @@ form span{
     padding: 1.5rem 2.5rem;
     font-size: 1.6rem;
     font-weight: 500;
-    background-color: var(--white);
-    color: var(--primary-base);
+    color: var(--white);
+    background-color: var(--primary-base);
     border: none;
     text-align: center;
     cursor: pointer;
     border-radius: 10px;
 }
 .cta-component:hover{
-    background-color: var(--primary-tint);
+    background-color: var(--primary-shade);
 
 }
 .submit-button{
@@ -529,8 +537,48 @@ textarea{
 }
 
 /* responsive */
+@media (max-width:420px){
+    html{
+        font-size: 30%;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+    h1{
+        font-size: 4.3rem;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+    h3{
+        font-size:2.7rem ;
+    }
+    .cta-text{
+        display: none;
+    }
+    .cta-heading{
+        margin-bottom: 10px;
+        font-size: 3.2rem;
+    }
+    a.cta-component{
+        font-size: 1.4rem;
+        padding: 1.3rem;
+    }
 
+}
 @media (max-width:500px){
+    html{
+        font-size: 40%;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+    h1{
+        font-size: 4.3rem;
+    }
+
+}
+@media (max-width:600px){
     html{
         font-size: 34%;
     }
@@ -594,4 +642,23 @@ textarea{
 .submit-button,.cta-component{
     font-size: 2rem;
 }
+}
+
+@media (max-width:800px){
+    html{
+        font-size: 50%;
+    }
+    .cta-section{
+    min-height: max-content ;
+   }
+
+}
+@media (max-width:1000px){
+    html{
+        font-size: 55%;
+    }
+    .cta-section{
+    min-height: max-content ;
+   }
+
 }
